@@ -19,4 +19,10 @@ class CarEntity {
     // this business logic depends only in itself
     return price * doorsNumber;
   }
+
+  setPriceBusinessLogic() {
+    if (this.priceMultiplied > 10000.0) {
+      this.price * 2;
+    }
+  }
 }
