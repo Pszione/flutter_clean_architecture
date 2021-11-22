@@ -20,9 +20,9 @@ class CarEntity {
     return price * doorsNumber;
   }
 
-  setPriceBusinessLogic() {
-    if (this.priceMultiplied > 10000.0) {
-      this.price * 2;
+  void setPriceBusinessLogic() {
+    if (priceMultiplied >= 10000.0) {
+      price *= 2;
     }
   }
 }
