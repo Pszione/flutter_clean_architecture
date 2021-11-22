@@ -6,6 +6,7 @@ import 'package:flutter_clean_architecture/layers/domain/repositories/save_favor
 class SaveFavoriteCarRepositoryImp implements SaveFavoriteCarRepository {
   @override
   Future<bool> call(CarEntity entity) async {
+    // TODO: CarDto for broader access
     return entity.price > 0 ? true : false;
   }
 }
