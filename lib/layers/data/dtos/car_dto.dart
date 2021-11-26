@@ -30,7 +30,7 @@ class CarDto extends CarEntity {
     };
   }
 
-  CarDto fromMap(Map map) {
+  static CarDto fromMap(Map map) {
     return CarDto(
         plate: map["plate"],
         factoryColor: map["factoryColor"],
