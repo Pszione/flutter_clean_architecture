@@ -2,8 +2,8 @@ import 'package:flutter_clean_architecture/layers/domain/entities/car_entity.dar
 
 class CarDto extends CarEntity {
   // This is NOT the same as the CarEntity
-  // this one is focused on APIs variable mapping
-  // but as it Extends the Entity they can be used interchangeably
+  // This is a container focused on APIs variable mapping. data transfer
+  // OBS: as it Extends the Entity they can be used interchangeably
   CarDto({
     required this.plate,
     required this.factoryColor,
@@ -21,7 +21,7 @@ class CarDto extends CarEntity {
   double factoryPrice;
 
   Map toMap() {
-    // JSON
+    // toJSON
     return {
       "plate": plate,
       "factoryColor": factoryColor,
@@ -31,6 +31,7 @@ class CarDto extends CarEntity {
   }
 
   static CarDto fromMap(Map map) {
+    // fromJSON
     return CarDto(
         plate: map["plate"],
         factoryColor: map["factoryColor"],

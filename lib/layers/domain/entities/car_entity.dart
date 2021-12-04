@@ -1,6 +1,7 @@
 // NOT depend on:
 // imports, JSON, packages, flutter material
 // or any other 3rd party dependencies
+// OBS: entities are focused on defining Business Logic
 
 class CarEntity {
   CarEntity({
