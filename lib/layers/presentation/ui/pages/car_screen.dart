@@ -9,7 +9,7 @@ import 'package:flutter_clean_architecture/layers/presentation/controllers/car_c
 class CarScreen extends StatelessWidget {
   CarScreen({Key? key}) : super(key: key);
 
-  CarController carController = CarController(
+  CarController controller = CarController(
     GetCarsByColorUseCaseImp(
       GetCarsByColorRepositoryImp(
         GetCarsByColorLocalDataSourceImp(),
@@ -25,7 +25,10 @@ class CarScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(24),
-        child: Text(''), // TODO
+        child: Text(
+          controller.carEntity.numberPlate,
+          style: const TextStyle(fontSize: 24),
+        ),
       ),
     );
   }

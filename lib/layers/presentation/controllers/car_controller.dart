@@ -7,13 +7,18 @@ class CarController {
   CarController(
     this._getCarsByColorUseCase,
     this._saveFavoriteCarUseCase,
-  );
+  ) {
+    // TODO: Demo initialization
+    fetchCarsByColor('red');
+  }
   // Usecases contracts
   final GetCarsByColorUseCase _getCarsByColorUseCase;
   final SaveFavoriteCarUseCase _saveFavoriteCarUseCase;
 
+  late CarEntity carEntity;
+
   void fetchCarsByColor(String color) {
-    var entity = _getCarsByColorUseCase(color);
+    carEntity = _getCarsByColorUseCase(color);
   }
 
   void saveFavoriteCar(CarEntity car) async {
