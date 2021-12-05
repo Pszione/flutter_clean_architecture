@@ -24,10 +24,15 @@ class CarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(24),
-        child: Text(
-          controller.carEntity.numberPlate,
-          style: const TextStyle(fontSize: 24),
+        padding: const EdgeInsets.all(24),
+        child: Center(
+          child: Text(
+            controller.carEntity.numberPlate,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );
