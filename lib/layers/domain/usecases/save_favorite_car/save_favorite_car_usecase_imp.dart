@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_clean_architecture/layers/domain/entities/car_entity.dart';
 import 'package:flutter_clean_architecture/layers/domain/repositories/save_favorite_car_repository.dart';
 import 'package:flutter_clean_architecture/layers/domain/usecases/save_favorite_car/save_favorite_car_usecase.dart';
@@ -15,7 +16,7 @@ class SaveFavoriteCarUseCaseImp implements SaveFavoriteCarUseCase {
   final SaveFavoriteCarRepository _saveFavoriteCarRepository;
 
   @override
-  Future<bool> call(CarEntity entity) async {
+  Future<Either<Exception, bool>> call(CarEntity entity) async {
     // domain will never call API, 3rd party, etc
     // you should always use contracts
 
