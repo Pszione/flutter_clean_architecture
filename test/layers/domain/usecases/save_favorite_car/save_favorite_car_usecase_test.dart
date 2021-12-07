@@ -16,8 +16,13 @@ void main() {
         numberPlate: 'plate', doorsNumber: 2, color: 'color', price: 1000);
     // ACT
     var result = await usecase.call(entity);
+    late bool resultExpected;
+    result.fold(
+      (error) => null,
+      (success) => resultExpected = success,
+    );
     // ASSERT
-    expect(result, true);
+    expect(resultExpected, true);
   });
 
   test('Should NOT save favorite car when price is equal to ZERO', () async {
@@ -29,7 +34,12 @@ void main() {
         numberPlate: 'plate', doorsNumber: 2, color: 'color', price: 0.0);
     // ACT
     var result = await usecase.call(entity);
+    late bool resultExpected;
+    result.fold(
+      (error) => null,
+      (success) => resultExpected = success,
+    );
     // ASSERT
-    expect(result, false);
+    expect(resultExpected, false);
   });
 }

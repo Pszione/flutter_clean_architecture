@@ -18,11 +18,16 @@ void main() {
     int doorNumber = 4;
     String numberPlate = 'AAA';
     // ACT
-    var entity = usecase.call('abcd');
+    var result = usecase.call('abcd');
+    late CarEntity resultEntity;
+    result.fold(
+      (error) => null,
+      (success) => resultEntity = success,
+    );
     // ASSERT
-    expect(entity, isInstanceOf<CarEntity>());
-    expect(entity.doorsNumber, doorNumber);
-    expect(entity.numberPlate, numberPlate);
+    expect(resultEntity, isInstanceOf<CarEntity>());
+    expect(resultEntity.doorsNumber, doorNumber);
+    expect(resultEntity.numberPlate, numberPlate);
   });
 
   test('Should receive a car entity with 3 doors when given [red] color', () {
@@ -34,8 +39,13 @@ void main() {
       ),
     );
     // ACT
-    var entity = usecase.call('red');
+    var result = usecase.call('red');
+    late CarEntity resultEntity;
+    result.fold(
+      (error) => null,
+      (success) => resultEntity = success,
+    );
     // ASSERT
-    expect(entity.doorsNumber, 3);
+    expect(resultEntity.doorsNumber, 3);
   });
 }
