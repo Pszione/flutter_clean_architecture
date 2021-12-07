@@ -18,7 +18,12 @@ class CarController {
   late CarEntity carEntity;
 
   void fetchCarsByColor(String color) {
-    carEntity = _getCarsByColorUseCase(color);
+    var result = _getCarsByColorUseCase(color);
+    // dartz forces us to handle either success or exception
+    result.fold(
+      (error) => print(error.toString()),
+      (success) => carEntity = success,
+    );
   }
 
   void saveFavoriteCar(CarEntity car) async {

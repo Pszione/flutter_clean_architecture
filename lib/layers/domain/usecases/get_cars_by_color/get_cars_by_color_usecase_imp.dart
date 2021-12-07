@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:flutter_clean_architecture/layers/domain/entities/car_entity.dart';
 import 'package:flutter_clean_architecture/layers/domain/repositories/get_cars_by_color_repository.dart';
 import 'package:flutter_clean_architecture/layers/domain/usecases/get_cars_by_color/get_cars_by_color_usecase.dart';
@@ -15,7 +16,7 @@ class GetCarsByColorUseCaseImp implements GetCarsByColorUseCase {
   final GetCarsByColorRepository _getCarsByColorRepository;
 
   @override
-  CarEntity call(String color) {
+  Either<Exception, CarEntity> call(String color) {
     return _getCarsByColorRepository(color);
   }
 }
