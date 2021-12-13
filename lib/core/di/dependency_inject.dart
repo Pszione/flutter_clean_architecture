@@ -18,7 +18,7 @@ class DependencyInject {
     GetIt getIt = GetIt.instance;
     // dependency = objects/classes
 
-    // *In this order!
+    // *In this order! - from outside layers to inside layers
     // core services
     getIt.registerLazySingleton<HttpsService>(() => DioHttpsServiceImpl());
     // datasources
