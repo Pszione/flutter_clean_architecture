@@ -1,3 +1,5 @@
+import 'package:flutter_clean_architecture/core/dio_https_service_impl.dart';
+import 'package:flutter_clean_architecture/core/https_service.dart';
 import 'package:flutter_clean_architecture/layers/data/datasources/get_cars_by_color_datasource.dart';
 import 'package:flutter_clean_architecture/layers/data/datasources/local/get_cars_by_color_local_datasource_imp.dart';
 import 'package:flutter_clean_architecture/layers/data/repositories/get_cars_by_color_repository_imp.dart';
@@ -17,6 +19,8 @@ class DependencyInject {
     // dependency = objects/classes
 
     // *In this order!
+    // core services
+    getIt.registerLazySingleton<HttpsService>(() => DioHttpsServiceImpl());
     // datasources
     getIt.registerLazySingleton<GetCarsByColorDataSource>(
       () => GetCarsByColorLocalDataSourceImp(),
