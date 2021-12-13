@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.4
+  dio:
   dartz:
   get_it:
 
