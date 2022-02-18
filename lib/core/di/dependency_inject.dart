@@ -20,7 +20,9 @@ class DependencyInject {
 
     // *In this order! - from outside layers to inside layers
     // core services
-    getIt.registerLazySingleton<HttpsService>(() => DioHttpsServiceImpl());
+    getIt.registerLazySingleton<HttpsService>(
+      () => DioHttpsServiceImpl(),
+    );
     // datasources
     getIt.registerLazySingleton<GetCarsByColorDataSource>(
       () => GetCarsByColorLocalDataSourceImp(),
